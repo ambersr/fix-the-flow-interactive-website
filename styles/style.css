@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.carousel-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 44px 0;
+    transition: all 0.2s ease-in;
+}
+
+.carousel-view .item-list {
+    width: 80vw;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+
+    @media screen and (min-width: 740px) {
+        max-width: 80vh;
+        /* width: 40vw; */
+    }
+
+    @media screen and (min-width: 1000px) {
+        max-width: 100vh;
+        /* width: 40vw; */
+    }
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.item-list::-webkit-scrollbar {
+    display: none;
+}
+
+.prev-btn {
+    background: none;
+    cursor: pointer;
+}
+
+.next-btn {
+    cursor: pointer;
+}
+
+
+/* Kaartje */
+li.reviewkaartje {
+    scroll-snap-align: center;
+    min-width: 100%;
+    padding: 1em;
+    background-color: deeppink;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1em;
+
+     @media screen and (min-width: 740px) {
+        height: 20em;
+            display: flex;
+            flex-direction: row-reverse;
+     }
+
+}
+
+/* Afbeelding kaartje */
+img.kaartje-afbeelding {
+    width: 100%;
+    border-radius: 2em;
+
+     @media screen and (min-width: 740px) {
+         width: 45%;
+     }
+}
+
+
+/* Content kaartje */
+.content-kaartje {
+    width: 100%;
+    align-self: center;
+
+    @media screen and (min-width: 1000px) {
+        width: 45%;
+    }
+}
+
+
+
+
+
+
+
+
+/* .slider-pagination {
+    position: absolute;
+    bottom: 120px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: blue;
+        opacity: .4;
+        margin: 0 10px;
+        transition: 200ms opacity;
+        will-change: opacity;
+
+        &.active {
+            opacity: 1;
+        }
+
+    }
+} */
