@@ -40,3 +40,6 @@ dots.forEach((dot, index) => {  // link elk puntje in de lijst aan de index
     updateCarousel(); // voer daarna de functie updatecarousel uit (hiermee update je slide)
   });
 });
+
+// Initial update
+updateCarousel(); // roept de functie updateCarousel() aan zodra de pagina geladen is
