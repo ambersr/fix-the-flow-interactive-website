@@ -19,3 +19,17 @@ function updateCarousel() {
   prevButton.disabled = currentslide === 0;  // De knop 'vorige' wordt uitgeschakeld als de currentslide 0 is, oftewel de eerste slide.
   nextButton.disabled = currentslide === slides.length - 1;  // De knop 'volgende' wordt uitgeschakeld als als de currentslide (slide) gelijk is aan de totaal aantal slides -1.
 }
+
+document.querySelector('.prev').addEventListener('click', () => {   // selecteer de knop 'vorige' en voer dan een click uit met een functie.
+  if (currentslide > 0) {  // wanneer je niet op de eerste slide bent
+    currentslide--;  // verlaag de waarde van de slide met 1
+    updateCarousel();  // voer dan de functie updateCarousel uit
+  }
+});
+
+document.querySelector('.next').addEventListener('click', () => {   // selecteer de knop 'volgende' en voer dan een click uit met een functie.
+  if (currentslide < slides.length - 1) {  // wanneer de huidige slide kleiner is dan de totale slides - 1
+    currentslide++; // verhoog de waarde van de slide met 1
+    updateCarousel();  // voer dan de functie updateCarousel uit
+  }
+});
