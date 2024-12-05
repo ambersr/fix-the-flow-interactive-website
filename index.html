@@ -5,136 +5,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://kimnikitaschijf.github.io/look-and-feel-styleguide/biebinbloei.css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="carousel-view">
-
-            <!-- Knop links -->
-            <button id="prev-btn" class="prev-btn">
-                <svg viewbox="0 0 512 512" width="20" title="chevron-circle-left">
-                    <path
-                        d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z" />
-                </svg>
-            </button>
+    <div class="carousel-wrapper">
+        <div class="carousel">
 
             <!-- Kaartjes -->
-            <ul id="item-list" class="item-list">
+            <ul class="slides">
 
                 <!-- Kaartje 1 -->
-                <li class="reviewkaartje">
-                    <img class="kaartje-afbeelding" src="./assets/werk1.png" alt="">
+                <li class="slide active">
+
+                    <img class="kaartje-afbeelding" src="./assets/review-student.jpg" alt="">
 
                     <div class="content-kaartje">
 
-                        <h3>Titel</h3>
-                        <p>Hier komt een tekst</p>
+                        <img class="icon" src="assets/quote-icon-bieb-in-bloei.svg" alt="">
 
-                        <div class="person-info">
-                            <p>Amber Schalker</p>
-                            <p>Student Frondend Design</p>
+                        <h3>De kracht van samenwerkingen en nog meer andere partners. </h3>
+                        <p>Ons derde Bieb in Bloei project is de Zadenbieb. Deze zal eind 2024 gemaakt worden door
+                            kinderen
+                            uit de buurt bij de Maakplaats in OBA Javaplein. Tijdens het Zaaifeest in maart 2025 zal er
+                            een
+                            feestelijk .</p>
+
+                        <div class="gegevens">
+                            <p class="naam">Amber Schalker</p>
+                            <p class="functie">Student Frondend Design</p>
                         </div>
 
                     </div>
 
                 </li>
 
-                <!-- Kaartje 1 -->
-                <li class="reviewkaartje">
-                    <img class="kaartje-afbeelding" src="./assets/werk1.png" alt="">
+                <!-- Kaartje 3 -->
+                <li class="slide">
+
+                    <img class="kaartje-afbeelding" src="./assets/review-student.jpg" alt="">
 
                     <div class="content-kaartje">
 
-                        <h3>Titel</h3>
-                        <p>Hier komt een tekst</p>
+                        <img class="icon" src="assets/quote-icon-bieb-in-bloei.svg" alt="">
 
-                        <div class="person-info">
-                            <p>Amber Schalker</p>
-                            <p>Student Frondend Design</p>
+                        <h3>De kracht van samenwerkingen en nog meer andere partners. </h3>
+                        <p>Ons derde Bieb in Bloei project is de Zadenbieb. Deze zal eind 2024 gemaakt worden door
+                            kinderen
+                            uit de buurt bij de Maakplaats in OBA Javaplein. Tijdens het Zaaifeest in maart 2025 zal er
+                            een
+                            feestelijk .</p>
+
+                        <div class="gegevens">
+                            <p class="naam">Amber Schalker</p>
+                            <p class="functie">Student Frondend Design</p>
                         </div>
 
                     </div>
 
                 </li>
 
-                 <!-- Kaartje 1 -->
-                 <li class="reviewkaartje">
-                     <img class="kaartje-afbeelding" src="./assets/werk1.png" alt="">
+                <!-- Kaartje 4 -->
+                <li class="slide">
 
-                     <div class="content-kaartje">
+                    <img class="kaartje-afbeelding" src="./assets/review-student.jpg" alt="">
 
-                         <h3>Titel</h3>
-                         <p>Hier komt een tekst</p>
+                    <div class="content-kaartje">
 
-                         <div class="person-info">
-                             <p>Amber Schalker</p>
-                             <p>Student Frondend Design</p>
-                         </div>
+                        <img class="icon" src="assets/quote-icon-bieb-in-bloei.svg" alt="">
 
-                     </div>
+                        <h3>De kracht van samenwerkingen en nog meer andere partners. </h3>
+                        <p>Ons derde Bieb in Bloei project is de Zadenbieb. Deze zal eind 2024 gemaakt worden door
+                            kinderen
+                            uit de buurt bij de Maakplaats in OBA Javaplein. Tijdens het Zaaifeest in maart 2025 zal er
+                            een
+                            feestelijk .</p>
 
-                 </li>
+                        <div class="gegevens">
+                            <p class="naam">Amber Schalker</p>
+                            <p class="functie">Student Frondend Design</p>
+                        </div>
 
-                 <!-- Kaartje 1 -->
-                 <li class="reviewkaartje">
-                     <img class="kaartje-afbeelding" src="./assets/werk1.png" alt="">
+                    </div>
 
-                     <div class="content-kaartje">
+                </li>
 
-                         <h3>Titel</h3>
-                         <p>Hier komt een tekst</p>
+            </ul>
+        </div>
 
-                         <div class="person-info">
-                             <p>Amber Schalker</p>
-                             <p>Student Frondend Design</p>
-                         </div>
+        <!-- Indicatoren (stipjes) -->
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
 
-                     </div>
-
-                 </li>
-            
-             <!-- Kaartje 1 -->
-             <li class="reviewkaartje">
-                 <img class="kaartje-afbeelding" src="./assets/werk1.png" alt="">
-
-                 <div class="content-kaartje">
-
-                     <h3>Titel</h3>
-                     <p>Hier komt een tekst</p>
-
-                     <div class="person-info">
-                         <p>Amber Schalker</p>
-                         <p>Student Frondend Design</p>
-                     </div>
-
-                 </div>
-
-             </li>
-
-             </ul>
-
-            <!-- Knop rechts -->
-            <button id="next-btn" class="next-btn">
-                <svg viewbox="0 0 512 512" width="20" title="chevron-circle-right">
-                    <path
-                        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z" />
-                </svg>
+        <!-- Knoppen pijlen links/rechts -->
+        <div class="carousel-buttons">
+            <button class="prev">
+                <img class="chevron" src="./assets/chevron-left.svg" alt="">
             </button>
-
+            <button class="next">
+                <img class="chevron" src="./assets/chevron-richt.svg" alt="">
+            </button>
         </div>
 
-        <!-- dots -->
-
-        <div class="slider-pagination">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
     </div>
 
     <script src="/scripts/script.js"></script>
