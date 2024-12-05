@@ -2,6 +2,33 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 3em 0em 10em 0em;
+}
+
+.uitleg {
+    width: 90%;
+    align-self: center;
+    @media screen and (min-width: 740px) {
+        width: 65%;
+    }
+}
+
+.feedback-feedforward {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: #bbb;
+    margin: 4em 0em;
+}
+
 /* ----- Carousel review ------ */
 .carousel-wrapper {
     position: relative;
