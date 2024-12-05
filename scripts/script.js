@@ -33,3 +33,10 @@ document.querySelector('.next').addEventListener('click', () => {   // selecteer
     updateCarousel();  // voer dan de functie updateCarousel uit
   }
 });
+
+dots.forEach((dot, index) => {  // link elk puntje in de lijst aan de index
+  dot.addEventListener('click', () => {  // wanneer je op het puntje klikt voer dan een functie uit
+    currentslide = index;  // link de huidige slide aan de juiste index (Zoals slide 2 = index 1)
+    updateCarousel(); // voer daarna de functie updatecarousel uit (hiermee update je slide)
+  });
+});
