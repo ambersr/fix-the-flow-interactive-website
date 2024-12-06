@@ -2,32 +2,1455 @@
     box-sizing: border-box;
 }
 
+* {
+    margin: 0em;
+}
+
 body {
     display: flex;
     flex-direction: column;
-    padding: 3em 0em 10em 0em;
 }
 
-.uitleg {
-    width: 90%;
+/* Animatie boven/beneden Harry */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    3% {
+        transform: translateY(-30px);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    45% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animatie zwaaien Harry */
+@keyframes handWave {
+
+    0%,
+    10%,
+    40%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(0deg);
+    }
+
+    /* Eerste zwaai */
+    12.5% {
+        transform: rotate(20deg);
+    }
+
+    15% {
+        transform: rotate(0deg);
+    }
+
+    /* Tweede zwaai */
+    17.5% {
+        transform: rotate(20deg);
+    }
+
+    20% {
+        transform: rotate(0deg);
+    }
+
+    /* Derde zwaai */
+    22.5% {
+        transform: rotate(20deg);
+    }
+
+    25% {
+        transform: rotate(0deg);
+    }
+
+    /* Hand stil, Harry gaat naar beneden */
+    40% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Animatie links-rechts Harry */
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    3% {
+        transform: translateX(30px);
+        transform: rotate(-22deg);
+        transform-origin: 280px 0px;
+    }
+
+    40% {
+        transform: translateX(30px);
+        transform: rotate(-22deg);
+        transform-origin: 280px 0px;
+    }
+
+    45% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (min-width: 740px) {
+    @keyframes moveLeftRight {
+        0% {
+            transform: translateY(0);
+        }
+
+        3% {
+            transform: translateY(-30px);
+        }
+
+        40% {
+            transform: translateY(-30px);
+        }
+
+        45% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Skiplink styling */
+.skiplink {
+    position: absolute;
+    left: -300px;
+    /* skiplink wordt uit het zicht naar links verplaatst */
+    top: 0;
+    z-index: 100;
+    padding: 1em;
+    background-color: var(--primary-highlight-color);
+    color: var(--primary-text-color);
+    font-weight: 500;
+}
+
+.skiplink:focus {
+    left: 1em;
+    box-shadow: 0 0 0 3px var(--orange-button);
+}
+
+.skiplink:hover {
+    color: var(--primary-text-color);
+}
+
+/* Navigatie + menu items */
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* Zorgt voor verticale centrering */
+    color: var(--text-darkgreen);
+    padding: 15px 1em;
+    transition: top 0.3s;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99;
+    border-radius: 0em 0em 1.5em 1.5em;
+
+    @media screen and (min-width: 820px) {
+        padding: 10px 3em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 10px 6.5em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 10px 8em;
+    }
+}
+
+nav {
+    display: flex;
+}
+
+/* Logo Bieb in Bloei*/
+.header-nav img {
+    width: 4.5em;
+    z-index: 35;
+    display: block;
+    position: relative;
     align-self: center;
+
+    @media screen and (min-width: 820px) {
+        width: 5em;
+    }
+}
+
+/* Hamburger knop */
+.checkbtn {
+    color: var(--text-off-white);
+    cursor: pointer;
+    display: flex;
+    /* checkbtn vult volledige breedte  */
+
+    position: absolute;
+    right: 15px;
+    border: none;
+    align-self: center;
+
+    @media screen and (min-width: 820px) {
+        display: none;
+    }
+}
+
+.checkbtn img {
+    width: 2.7em;
+}
+
+/* Menu items */
+.header-nav ul {
+    list-style-type: none;
+    padding: 0 0 100px 0;
+    margin: -1em 0em 0em 0em;
+    position: fixed;
+    top: 80px;
+    right: 0%;
+    translate: 100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: all 0.3s;
+    z-index: 30;
+
+    @media screen and (min-width: 820px) {
+        position: static;
+        width: unset;
+        /* width gereset naar eigen waarde */
+        height: unset;
+        /* height gereset naar eigen waarde */
+        translate: 0;
+        flex-direction: row;
+        gap: 60px;
+        padding-bottom: 0;
+        margin: 0.3em 0em 0em 0em;
+    }
+}
+
+.header-nav ul.open {
+    translate: 0%;
+    padding-bottom: 100px;
+}
+
+.header-nav li {
+    margin: 10px 0;
+    display: flex;
+}
+
+.header-nav a {
+    color: var(--text-darkgreen);
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    font-size: 1em;
+    height: unset;
+}
+
+.header-nav a:hover {
+    color: var(--primary-highlight-color);
+    transform: scale(110%);
+    transition: 0.2s ease-in-out;
+}
+
+.header-nav a.actief {
+    color: var(--primary-highlight-color);
+    transform: scale(110%);
+    transition: 0.2s ease-in-out;
+}
+
+
+
+
+/* Animatie Harry in Geveltuin */
+/* Animatie harry */
+.harry {
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 1;
+    animation: moveUpDown 12s ease-in-out infinite;
+    /* Duur animatie 12s oneindig */
+    animation-delay: 3s;
+    position: relative;
+}
+
+.harry svg {
+    margin-top: -80px;
+    margin-bottom: -65px;
+    margin-right: 20%;
+    width: 120px;
+}
+
+/* Hand zwaaien Harry */
+#hand {
+    transform-origin: 60% 50%;
+    animation: handWave 12s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sectie 1 Geveltuin */
+.sectie-geveltuin {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 8em 1em 7em 1em;
+    border-radius: 0px 0px 20px 20px;
+    gap: 3em;
+    margin-bottom: -4em;
+
     @media screen and (min-width: 740px) {
+        flex-direction: row;
+        padding: 8em 3em 7em 3em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 8em 6em 7em 6em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 8em 8em 8em 8em;
+    }
+}
+
+/* Geveltuin links */
+.geveltuin-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    @media screen and (min-width: 740px) {
+        width: 50%;
+        align-self: center;
+    }
+}
+
+.geveltuin-links p {
+    max-width: 100%;
+
+    @media screen and (min-width: 740px) {
+        max-width: 90%;
+    }
+}
+
+.geveltuin-links .btn-oranje {
+    margin-top: 1em;
+}
+
+/* Geveltuin rechts */
+.geveltuin-rechts {
+    width: 100%;
+
+    @media screen and (min-width: 740px) {
+        width: 50%;
+    }
+}
+
+.geveltuin-rechts img {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+    /* zorgt ervoor dat de afbeelding het object vult */
+
+    @media screen and (min-width: 740px) {
+        height: 28em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        height: 24em;
+    }
+}
+
+/* oranje blad */
+img.leave-orange {
+    position: absolute;
+    z-index: 0;
+    top: -30px;
+    left: -230px;
+    width: 500px;
+
+    @media screen and (min-width: 740px) {
+        top: -30px;
+        left: -200px;
+        width: 550px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        top: -70px;
+        left: -230px;
+        width: 650px;
+    }
+}
+
+
+
+
+
+
+/* Sectie 2 Groener */
+.sectie-groener {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3em 0em 0em 0em;
+    align-self: center;
+    width: 92%;
+    border-radius: 20px;
+    z-index: 4;
+    overflow: hidden;
+
+    @media screen and (min-width: 740px) {
+        width: 90%;
+        padding: 4em 0em 0em 0em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 82%;
+        padding: 4.7em 0em 0em 0em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 81%;
+    }
+}
+
+.groener-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    margin: 0em 2em 0em 2em;
+
+    @media screen and (min-width: 740px) {
+        align-self: center;
+        width: 65%;
+    }
+
+    @media screen and (min-width: 1000px) {
+        align-self: center;
+        width: 65%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        align-self: center;
+        width: 53%;
+    }
+}
+
+.begin h2 {
+    text-align: left;
+    padding: 0em 1em 0em 1em;
+
+    @media screen and (min-width: 740px) {
+        margin-bottom: 0.5em;
+    }
+}
+
+.groener-content p:nth-of-type(2) {
+    text-align: left;
+    padding: 0em 2em 1.5em 0em;
+}
+
+/* Banner afbeelding */
+.banner-img img {
+    width: 100%;
+    height: 50vh;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: -10px;
+    margin-top: 3.5em;
+    z-index: 1;
+    position: relative;
+    /* zorgt ervoor dat de z-index werkt */
+
+    @media screen and (min-width: 740px) {
+        height: 40vh;
+        margin-top: 5em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        height: 45vh;
+    }
+}
+
+/* Blad links */
+img.blad-links-groener {
+    position: absolute;
+    left: 10%;
+    transform: translate(-45%, -80%);
+    width: 230px;
+    z-index: 0;
+
+    @media screen and (min-width: 740px) {
+        width: 30%;
+        transform: translate(-50%, -30%);
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 25%;
+    }
+}
+
+/* Blad rechts */
+img.blad-rechts-groener {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    margin-top: 300px;
+    z-index: 0;
+    display: none;
+
+    @media screen and (min-width: 740px) {
+        display: block;
+        width: 230px;
+        position: absolute;
+        right: 0;
+        margin-top: 100px;
+        translate: 50px, 50px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 330px;
+        position: absolute;
+        right: 0;
+        margin-top: -300px;
+    }
+}
+
+
+
+
+
+
+/* Sectie 3 Waarom */
+.sectie-waarom {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 18em 1em 3em 1em;
+    border-radius: 0px 0px 20px 20px;
+    gap: 3em;
+    margin-top: -15em;
+    z-index: 2;
+
+    @media screen and (min-width: 740px) {
+        flex-direction: row;
+        padding: 20em 3em 7em 3em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 20em 6em 7em 6em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 22em 8em 6em 8em;
+    }
+}
+
+/* Links sectie 3 */
+.sectie-waarom p:nth-of-type(2) {
+    margin-bottom: 1.5em;
+}
+
+.waarom-links {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    @media screen and (min-width: 740px) {
+        width: 50%;
+    }
+}
+
+/* Rechts sectie 3 */
+.waarom-rechts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 10;
+
+    @media screen and (min-width: 740px) {
+        width: 50%;
+        z-index: 99;
+    }
+}
+
+.waarom-rechts h3 {
+    color: var(--text-darkgreen);
+    font-size: 1.5em;
+}
+
+/* Styling accordion */
+.accordion-card {
+    padding: 2em;
+    border-radius: var(--rounded);
+    z-index: 1;
+    width: 100%;
+    background-color: var(--primary-background-color);
+
+    @media screen and (min-width: 740px) {
+        width: 100%;
+    }
+}
+
+details {
+    border-bottom: 1px solid var(--secondary-text-color);
+    background-color: #f8e7c1;
+    margin-bottom: 10px;
+}
+
+summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 15px 15px 10px;
+    font-family: var(--font-sub-header);
+    color: var(--text-darkgreen);
+}
+
+summary::after {
+    /* voegt + teken toe achter de inhoud van de summary */
+    content: "+";
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    /* voegt - teken toe wanneer details wordt geopend */
+    content: "-";
+    transform: rotate(180deg);
+    /* Draai het minteken */
+}
+
+details[open] p {
+    padding: 10px 10px 20px 10px;
+    color: var(--brown-text);
+}
+
+details>summary {
+    list-style: none;
+}
+
+details>summary::marker,
+/* Zorgt ervoor dat de standaard marker uitgezet wordt in de browsers: Chrome, Edge, Firefox */
+details>summary::-webkit-details-marker
+
+/* Zorgt ervoor dat de standaard marker uitgezet wordt in de browser Safari */
+    {
+    display: none;
+}
+
+/* Blad links */
+.sectie-waarom img.blad-links-waarom {
+    position: absolute;
+    left: 0;
+    width: 250px;
+    margin-top: -170px;
+    z-index: 0;
+
+    @media screen and (min-width: 740px) {
+        width: 300px;
+        margin-left: 20px;
+        margin-top: -150px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 400px;
+        margin-left: 0px;
+        margin-top: -250px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 430px;
+        margin-top: -320px;
+    }
+}
+
+/* Blad rechts */
+.sectie-waarom img.blad-rechts-waarom {
+    position: absolute;
+    right: 0;
+    display: none;
+    margin-top: 100px;
+    margin-left: 50px;
+    z-index: 0;
+
+    @media screen and (min-width: 740px) {
+        display: block;
+        width: 300px;
+        margin-left: 20px;
+        margin-top: 200px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        display: block;
+        width: 350px;
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        display: block;
+        width: 380px;
+        margin-left: 20px;
+        margin-top: -50px;
+    }
+}
+
+/* Harry sectie 3 */
+.waarom-rechts .harry {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.waarom-rechts .harry svg {
+    margin-top: -80px;
+    margin-bottom: -65px;
+    margin-right: 0%;
+    width: 120px;
+    /* animation: moveUpDown 12s ease-in-out infinite;  */
+    animation-delay: 3s;
+    z-index: 10;
+
+    @media screen and (min-width: 740px) {
+        margin-right: 20%;
+    }
+}
+
+/* Hand zwaaien Harry */
+#hand-2 {
+    transform-origin: 60% 50%;
+    animation: handWave 12s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+
+
+
+
+
+
+
+
+/* Sectie 4 'Aanmelden'*/
+.sectie-aanmelden {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 3em 1em 3em 1em;
+    border-radius: 20px;
+    z-index: 1;
+    justify-content: center;
+    overflow: hidden;
+    /* zorgt ervoor dat harry niet buiten het scherm valt */
+
+    @media screen and (min-width: 740px) {
+        padding: 4em 3em 7em 3em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 5em 6em 7em 6em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 5em 8em 6em 8em;
+    }
+}
+
+.sectie-aanmelden h2 {
+    align-self: center;
+    text-align: center;
+    padding: 0em 0em 0.5em 0em;
+    z-index: 1;
+
+    @media screen and (min-width: 740px) {
+        padding: 0em 0em 0.8em 0em;
+        width: 70%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 60%;
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 50%;
+    }
+}
+
+.sectie-aanmelden p {
+    align-self: center;
+}
+
+.aanmeld-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+
+    @media screen and (min-width: 740px) {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        width: 80%;
+    }
+}
+
+
+
+/* Blok links */
+.aanmeld-content .formulier {
+    width: 100%;
+    overflow: hidden;
+}
+
+.formulier h3 {
+    font-size: 1.7em;
+}
+
+.formulier {
+    z-index: 2;
+    position: relative;
+    background-color: var(--primary-background-color);
+    padding: 2em 2em 5.5em 2em;
+    border-radius: 15px;
+
+    @media screen and (min-width: 1000px) {
         width: 65%;
     }
 }
 
-.feedback-feedforward {
-    display: flex;
-    flex-direction: row;
-    gap: 3em;
+.formulier .divider {
+    height: 1px;
+    background-color: rgb(208, 206, 177);
+    margin: 1.5em 0em 1.5em 0em;
 }
 
-.divider {
-    height: 1px;
-    width: 100%;
-    background-color: #bbb;
-    margin: 4em 0em;
+/* Aanmeldformulier */
+form {
+    padding: 0;
 }
+
+button.btn-verzenden {
+    width: 10em;
+}
+
+input:user-invalid {
+    border: 2px solid red !important;
+    background-color: #ffe6e6 !important;
+}
+
+/* Blok rechts */
+.aanmelden-rechts {
+    background-color: var(--third-background-color);
+    padding: 0.5em;
+    border-radius: 15px;
+    z-index: 1;
+
+    @media screen and (min-width: 1000px) {
+        width: 38%;
+    }
+}
+
+/* Afbeelding in blok rechts */
+img.info-img {
+    width: 100%;
+    height: 18em;
+    border-radius: 15px;
+    object-fit: cover;
+
+    @media screen and (min-width: 1000px) {
+        width: 100%;
+        height: 15em;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+}
+
+.aanmelden-rechts h4 {
+    font-size: 1.3em;
+    padding: 1em 1em 1em 1em;
+
+    @media screen and (min-width: 740px) {
+        padding: 1em 1em 0.7em 0.7em;
+    }
+}
+
+.aanmelden-rechts p {
+    padding: 0em 1em 1em 1em;
+}
+
+.aanmelden-rechts ul {
+    list-style-type: none;
+    padding: 0em 1em 1em 1em;
+}
+
+.aanmelden-rechts li a {
+    color: var(--primary-background-color);
+    gap: 10px;
+    display: flex;
+}
+
+.aanmelden-rechts li {
+    gap: 10px;
+    display: flex;
+}
+
+/* Harry in aanmelden */
+.aanmelden-links .harry {
+    display: flex;
+    flex-direction: row-reverse;
+    animation: moveLeftRight 12s ease-in-out infinite;
+    /* Animatieduur 12s en oneindig */
+    animation-delay: 3s;
+    /* wacht 3s en laat dan de animatie beginnen */
+    z-index: 3;
+    position: relative;
+
+    @media screen and (min-width: 740px) {
+        z-index: 0;
+    }
+}
+
+.aanmelden-links .harry svg {
+    margin-top: -80px;
+    margin-bottom: -75px;
+    margin-right: -13%;
+    width: 120px;
+    transform: rotate(-38deg);
+
+    @media screen and (min-width: 740px) {
+        margin-right: 60%;
+        transform: rotate(0deg);
+    }
+}
+
+/* Hand zwaaien Harry */
+#hand-3 {
+    transform-origin: 60% 50%;
+    animation: handWave 12s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+
+
+
+
+/* leave top left */
+img.blad-links-aanmelden {
+    position: relative;
+    left: 0;
+    width: 300px;
+    z-index: 0;
+    margin-top: -220px;
+    margin-bottom: -150px;
+
+    @media screen and (min-width: 740px) {
+        width: 300px;
+        margin-top: -220px;
+        margin-bottom: -120px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 350px;
+        margin-top: -220px;
+        margin-bottom: -200px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 370px;
+        margin-top: -260px;
+        margin-bottom: -170px;
+        translate: 0px 0px;
+    }
+}
+
+/* leave right */
+img.blad-rechts-aanmelden {
+    position: absolute;
+    right: 0;
+    display: none;
+    margin-left: 50px;
+    z-index: 0;
+
+    @media screen and (min-width: 740px) {
+        display: block;
+        width: 250px;
+        margin-top: -620px;
+        translate: 0px 0px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 320px;
+        margin-top: -640px;
+        translate: 0px 0px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 370px;
+        margin-top: -450px;
+        translate: 0px 0px;
+    }
+}
+
+
+
+
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2DEAB;
+    padding: 3em 1em 3em 1em;
+    gap: 30px;
+    border-radius: 20px 20px 0px 0px;
+    z-index: 30;
+
+    @media screen and (min-width: 740px) {
+        flex-direction: row;
+        padding: 4em 3em 7em 3em;
+        justify-content: space-between;
+    }
+
+    @media screen and (min-width: 1000px) {
+        flex-direction: row;
+        padding: 5em 6em 5em 6em;
+        justify-content: space-between;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 5em 8em 5em 8em;
+        ;
+    }
+}
+
+/* Logo Bieb in Bloei */
+footer figure {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: var(--font-paragraph);
+    color: var(--text-darkgreen);
+
+    @media screen and (min-width: 740px) {
+        width: 33.3%;
+    }
+}
+
+/* Menu items */
+footer h3 {
+    font-size: 1.4em;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0em 1em 0em 0em;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-items li a {
+    text-decoration: none;
+    color: var(--text-darkgreen);
+}
+
+.menu-items li a:hover {
+    color: var(--button-hover);
+}
+
+@media screen and (min-width: 740px) {
+    .menu {
+        width: 15%;
+    }
+}
+
+@media screen and (min-width: 740px) {
+    .samenwerken {
+        width: 33.3%;
+    }
+}
+
+.samenwerken a:hover {
+    color: var(--button-hover);
+}
+
+
+/* ---------------------------------------- Contact pagina ------------------------------------------------------------ */
+
+.sectie-contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    padding: 8em 1em 7em 1em;
+    border-radius: 0px 0px 20px 20px;
+    margin-bottom: -4em;
+
+    @media screen and (min-width: 740px) {
+        padding: 8em 3em 10em 3em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 8em 6em 13em 6em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 8em 8em 13em 8em;
+    }
+}
+
+.sectie-contact p {
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    z-index: 3;
+
+    @media screen and (min-width: 740px) {
+        width: 60%;
+    }
+}
+
+.sectie-contact h1 {
+    text-align: center;
+    z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+
+/* Sectie 2 contact formulier */
+.sectie-contact-formulier {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 1em;
+    padding: 5em 1em 3em 1em;
+    margin-top: -4em;
+    border-radius: 20px;
+    z-index: 1;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    /* zorgt ervoor dat harry niet buiten het scherm valt */
+
+    @media screen and (min-width: 740px) {
+        padding: 8em 3em 7em 3em;
+        flex-direction: row;
+        margin-top: -9em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        margin-top: -10em;
+        padding: 8em 6em 7em 6em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 7em 8em 6em 8em;
+    }
+}
+
+/* Blok links */
+.contact-formulier-links {
+    overflow: hidden;
+}
+
+.contact-formulier-links h2 {
+    font-size: 1.7em;
+}
+
+.contact-formulier-links {
+    z-index: 2;
+    position: relative;
+    background-color: var(--primary-text-color);
+    padding: 2em 2em 3em 2em;
+    border-radius: 15px;
+    border: 1px solid rgb(224, 224, 224);
+
+    @media screen and (min-width: 1000px) {
+        width: 100%;
+        padding: 2em 2em 5.5em 2em;
+    }
+}
+
+.contact-formulier-links p {
+    width: 100%;
+
+    @media screen and (min-width: 1000px) {
+        width: 80%;
+    }
+}
+
+.contact-formulier-links .divider {
+    height: 1px;
+    background-color: rgb(208, 206, 177);
+    margin: 1.5em 0em 1.5em 0em;
+}
+
+/* Aanmeldformulier */
+form {
+    padding: 0;
+}
+
+.contact-formulier-links input {
+    background-color: #fbf3df;
+    border: 1px solid rgb(224, 224, 224);
+}
+
+/* Blok rechts */
+.contact-formulier-rechts {
+    background-color: var(--third-background-color);
+    padding: 0.5em;
+    border-radius: 15px;
+    z-index: 1;
+
+    @media screen and (min-width: 750px) {
+        width: 45%;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 31%;
+    }
+}
+
+/* Afbeelding in blok rechts */
+.map iframe {
+    width: 100%;
+    height: 18em;
+    border-radius: 15px;
+    object-fit: cover;
+
+    @media screen and (min-width: 1000px) {
+        width: 100%;
+        height: 15em;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+}
+
+.contact-formulier-rechts h3 {
+    font-size: 1.3em;
+    padding: 1em 1em 1em 1em;
+
+    @media screen and (min-width: 740px) {
+        padding: 1em 1em 0.7em 0.7em;
+    }
+}
+
+.contact-formulier-rechts p {
+    padding: 0em 1em 1em 1em;
+}
+
+.contact-formulier-rechts ul {
+    list-style-type: none;
+    padding: 0em 1em 1em 1em;
+}
+
+.contact-formulier-rechts li a {
+    color: var(--primary-background-color);
+    gap: 10px;
+    display: flex;
+}
+
+.contact-formulier-rechts li {
+    gap: 10px;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+/* Sectie 3 'FAQ' */
+.sectie-faq {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    padding: 0em 1em 7em 1em;
+
+    @media screen and (min-width: 740px) {
+        padding: 0em 0em 7em 0em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 0em 0em 7em 0em;
+    }
+}
+
+.sectie-faq h2 {
+    width: 100%;
+    text-align: center;
+    align-self: center;
+
+    @media screen and (min-width: 740px) {
+        padding: 0em 1em 0.7em 0.7em;
+        width: 70%;
+    }
+}
+
+.veelgestelde-vragen {
+    align-self: center;
+}
+
+.sectie-faq details {
+    background-color: #ffffff;
+}
+
+.sectie-faq details {
+    width: 100%;
+
+    @media screen and (min-width: 740px) {
+        width: 40em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Blad links */
+img.blad-links-faq {
+    position: absolute;
+    left: 10%;
+    transform: translate(-45%, -80%);
+    width: 230px;
+    z-index: 0;
+
+    @media screen and (min-width: 740px) {
+        width: 30%;
+        transform: translate(-50%, -30%);
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 28%;
+    }
+}
+
+/* Blad rechts */
+img.blad-rechts-faq {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    margin-top: 300px;
+    z-index: 0;
+    display: none;
+
+    @media screen and (min-width: 740px) {
+        display: block;
+        width: 230px;
+        position: absolute;
+        right: 0;
+        margin-top: 100px;
+        translate: 50px, 50px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 330px;
+        position: absolute;
+        right: 0;
+        margin-top: 0px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ----- Carousel review ------ */
 .carousel-wrapper {
