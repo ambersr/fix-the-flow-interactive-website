@@ -1630,97 +1630,167 @@ button.next {
 
 /* ---------------------------------------- Partner pagina ------------------------------------------------------------ */
 
-/* Sectie 1 Geveltuin */
-.sectie-geveltuin {
+.sectie-partner {
     display: flex;
     flex-direction: column;
+    width: 100%;
     align-self: center;
     padding: 8em 1em 7em 1em;
     border-radius: 0px 0px 20px 20px;
-    gap: 3em;
     margin-bottom: -4em;
 
     @media screen and (min-width: 740px) {
-        flex-direction: row;
-        padding: 8em 3em 7em 3em;
+        padding: 8em 3em 10em 3em;
     }
 
     @media screen and (min-width: 1000px) {
-        padding: 8em 6em 7em 6em;
+        padding: 8em 6em 10em 6em;
     }
 
     @media screen and (min-width: 1200px) {
-        padding: 8em 8em 8em 8em;
+        padding: 8em 8em 10em 8em;
     }
 }
 
-/* Geveltuin links */
-.geveltuin-links {
+.sectie-partner p {
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    z-index: 3;
+
+    @media screen and (min-width: 740px) {
+        width: 60%;
+    }
+}
+
+.sectie-partner h1 {
+    text-align: center;
+    z-index: 3;
+}
+
+.sectie-partner a {
+    align-self: center;
+    margin-top: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sectie 2 Groener */
+.sectie-samenwerkingen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3em 0em 0em 0em;
+    align-self: center;
+    width: 92%;
+    border-radius: 20px;
+    z-index: 4;
+    overflow: hidden;
+
+    @media screen and (min-width: 740px) {
+        width: 90%;
+        padding: 4em 0em 0em 0em;
+        flex-direction: row;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 82%;
+        padding: 4.7em 0em 0em 0em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 81%;
+    }
+}
+
+.sectie-samenwerkingen .links {
     width: 100%;
     display: flex;
     flex-direction: column;
     z-index: 1;
+    margin: 0em 2em 3em 2em;
 
     @media screen and (min-width: 740px) {
-        width: 50%;
         align-self: center;
+        width: 65%;
+         margin: 0em 0em 0em 3em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        align-self: center;
+        width: 65%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        align-self: center;
+        width: 65%;
     }
 }
 
-.geveltuin-links p {
-    max-width: 100%;
 
-    @media screen and (min-width: 740px) {
-        max-width: 90%;
-    }
+.sectie-samenwerkingen .links p:nth-of-type(2) {
+    text-align: left;
+    padding: 0em 2em 1.5em 0em;
 }
 
-.geveltuin-links .btn-oranje {
-    margin-top: 1em;
+.rechts {
+    justify-content: end;
+    display: flex;
 }
 
-/* Geveltuin rechts */
-.geveltuin-rechts {
-    width: 100%;
-
-    @media screen and (min-width: 740px) {
-        width: 50%;
-    }
-}
-
-.geveltuin-rechts img {
-    width: 100%;
-    height: 400px;
+/* Banner afbeelding */
+.rechts img {
+    width: 85%;
+    height: 50vh;
     border-radius: 20px;
     object-fit: cover;
-    /* zorgt ervoor dat de afbeelding het object vult */
+    margin-bottom: -10px;
+    z-index: 1;
+    position: relative; /* zorgt ervoor dat de z-index werkt */
+     margin: 0em 2em 3em 2em;
 
     @media screen and (min-width: 740px) {
-        height: 28em;
+        height: 55vh;
+         width: 85%;
+           margin: 0em 2em 3em 0em;
     }
 
-    @media screen and (min-width: 1200px) {
-        height: 24em;
+    @media screen and (min-width: 1000px) {
+        height: 60vh;
     }
 }
 
-/* oranje blad */
-img.leave-orange {
+/* Blad rechts */
+img.blad-rechts-partner {
     position: absolute;
+    right: 0;
+    width: 200px;
+    margin-top: 300px;
     z-index: 0;
-    top: -30px;
-    left: -230px;
-    width: 500px;
+    display: none;
 
     @media screen and (min-width: 740px) {
-        top: -30px;
-        left: -200px;
-        width: 550px;
+        display: block;
+        width: 230px;
+        position: absolute;
+        right: 0;
+        margin-top: 100px;
+        translate: 50px, 50px;
     }
 
-    @media screen and (min-width: 1200px) {
-        top: -70px;
-        left: -230px;
-        width: 650px;
+    @media screen and (min-width: 1000px) {
+        width: 330px;
+        position: absolute;
+        right: 0;
+        margin-top: 100px;
     }
 }
