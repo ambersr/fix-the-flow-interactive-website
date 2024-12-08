@@ -57,6 +57,8 @@ dots.forEach((dot, index) => {  // link elk puntje in de lijst aan de index
   });
 });
 
+// Initial update
+updateCarousel(); // roept de functie updateCarousel() aan zodra de pagina geladen is
 
 document.addEventListener("DOMContentLoaded", () => {
   updateCarousel(); // Initial update wanneer DOM klaar is
