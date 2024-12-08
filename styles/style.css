@@ -1991,6 +1991,11 @@ img.kaartje-afbeelding {
     transition: 0.2s ease-in-out;
 }
 
+.carousel-buttons button:active {
+    transform: scale(0.8);
+    transition: 0.2s ease-in-out;
+}
+
 /* Knop wanneer je niet verder kan */
 button:disabled {
     cursor: not-allowed;
