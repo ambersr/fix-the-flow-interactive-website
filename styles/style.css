@@ -1851,7 +1851,7 @@ img.kaartje-img {
 .carousel-wrapper {
     position: relative;
     margin: auto;
-    width: 90%;
+    width: 80%;
 
     @media screen and (min-width: 740px) {
         display: flex;
@@ -1974,7 +1974,6 @@ img.kaartje-afbeelding {
 
 .carousel-buttons button {
     background-color: #00000000;
-    color: white;
     border: none;
     border-radius: 100px;
     cursor: pointer;
@@ -1983,10 +1982,13 @@ img.kaartje-afbeelding {
     height: 4em;
 }
 
+.carousel-buttons button p {
+    font-size: 16px;
+}
+
 .carousel-buttons button:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
     transition: 0.2s ease-in-out;
-    background-color: #f4f4f4;
 }
 
 /* Knop wanneer je niet verder kan */
