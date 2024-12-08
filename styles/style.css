@@ -1704,7 +1704,7 @@ button.next {
 
     @media screen and (min-width: 1000px) {
         width: 82%;
-        padding: 4.7em 0em 0em 0em;
+        padding: 5em 0em 5em 0em;
     }
 
     @media screen and (min-width: 1200px) {
@@ -1722,7 +1722,7 @@ button.next {
     @media screen and (min-width: 740px) {
         align-self: center;
         width: 65%;
-        margin: 0em 0em 0em 3em;
+        margin: 0em 0em 4em 3em;
     }
 
     @media screen and (min-width: 1000px) {
@@ -1755,18 +1755,17 @@ button.next {
     object-fit: cover;
     margin-bottom: -10px;
     z-index: 1;
-    position: relative;
-    /* zorgt ervoor dat de z-index werkt */
+    position: relative; /* zorgt ervoor dat de z-index werkt */
     margin: 0em 2em 3em 2em;
 
     @media screen and (min-width: 740px) {
-        height: 55vh;
+        height: 60vh;
         width: 85%;
-        margin: 0em 2em 3em 0em;
+        margin: 0em 3em 0em 0em;
     }
 
     @media screen and (min-width: 1000px) {
-        height: 60vh;
+        height: 70vh;
     }
 }
 
@@ -1805,6 +1804,7 @@ img.blad-rechts-partner {
 
 /* Sectie 'bedrijven' */
 .sectie-bedrijven {
+     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1824,11 +1824,16 @@ img.blad-rechts-partner {
     }
 }
 
+/* Content */
 .sectie-bedrijven .boven {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
     justify-content: center;
+
+      @media screen and (min-width: 740px) {
+           width: 60%;
+      }
 }
 
 .sectie-bedrijven .boven h2 {
@@ -1842,18 +1847,20 @@ img.blad-rechts-partner {
 
 /* Kaartjes */
 .bedrijven-kaartjes {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 2em 0em 0em 0em;
     display: grid;
     gap: 1em;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
-     @media screen and (min-width: 750px) {
-         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-         padding-bottom: 45px;
-     }
+    @media screen and (min-width: 750px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 
     @media screen and (min-width: 1000px) {
-        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-        padding-bottom: 45px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     @media screen and (min-width: 1600px) {
@@ -1861,35 +1868,28 @@ img.blad-rechts-partner {
     }
 }
 
-/* boven */
-.bedrijven-kaartjes .boven {
-    width: 100%;
-    z-index: 1;
-}
-
-/* Kaartje */
-.bedrijven-kaartjes ul {
-    padding: 0;
-}
 .bedrijven-kaartjes li {
     border-radius: 1em;
     padding: 0.5em;
     list-style-type: none;
 }
 
-.bedrijven-kaartjes li h3 {
-    font-size: 1.3em;
-}
-
-img.kaartje-img {
+/* Kaartje boven */
+.bedrijven-kaartjes .boven {
+    width: 100%;
     height: 35vh;
     z-index: 1;
     border-radius: 1em;
+    border: solid 1px rgb(205, 205, 205);
 }
 
-.bedrijven-kaartjes .onder {
-    display: flex;
-    flex-direction: column;
+img.kaartje-img {
+    height: 10vh;
+    z-index: 1;
+    border-radius: 1em;
+    width: 15em;
+    align-self: center;
+    object-fit: contain;
 }
 
 /* Tag */
@@ -1908,11 +1908,16 @@ img.kaartje-img {
     width: 1em;
 }
 
-/* Onder */
-.sectie-bedrijven .onder {
-    width: 100%;
+/* Kaartje onder */
+.bedrijven-kaartjes .onder {
+    display: flex;
+    flex-direction: column;
     padding: 1em;
-} 
+}
+
+.bedrijven-kaartjes li h3 {
+    font-size: 1.3em;
+}
 
 /* Locatie */
 .locatie {
@@ -1929,4 +1934,62 @@ img.kaartje-img {
 .locatie p {
     color: #344e357a;
     font-size: 15px;
+}
+
+
+/* Blad links */
+.sectie-bedrijven img.blad-links-bedrijven {
+    position: absolute;
+    left: 0;
+    width: 250px;
+    margin-top: -100px;
+    z-index: 0;
+
+    @media screen and (min-width: 740px) {
+        width: 300px;
+        margin-left: 20px;
+        margin-top: -150px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 400px;
+        margin-left: 0px;
+        margin-top: -200px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 430px;
+        margin-top: -200px;
+    }
+}
+
+/* Blad rechts */
+.sectie-bedrijven img.blad-rechts-bedrijven{
+    position: absolute;
+    right: 0;
+    display: none;
+    margin-top: 100px;
+    margin-left: 50px;
+    z-index: 0;
+
+    @media screen and (min-width: 740px) {
+        display: block;
+        width: 300px;
+        margin-left: 20px;
+        margin-top: 200px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        display: block;
+        width: 350px;
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        display: block;
+        width: 380px;
+        margin-left: 20px;
+        margin-top: -50px;
+    }
 }
