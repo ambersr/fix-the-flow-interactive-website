@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+            <link rel="stylesheet" href="https://kimnikitaschijf.github.io/look-and-feel-styleguide/biebinbloei.css">
+             <link rel="stylesheet" href="./styles/interactie.css">
+
+</head>
+<body>
+
+        <div class="uitleg">
+
+            <h1>
+                Micro interactie met Javascript
+            </h1>
+            <p>
+                Voor deze opdracht heb ik gekozen om een micro interactie te maken aan de hand van een carousel met
+                reviews voor de Geveltuin projecten.
+                Aan de hand van het 3 stappenplan ben ik aan de slag gegaan met het maken van een responsive carousel.
+                Hierbij heb ik ook gekeken naar hoe ik de feedback en de feedforward kan verwerken. Bekijk hieronder
+                mijn carousel.
+            </p>
+
+            <a href="https://github.com/ambersr/fix-the-flow-interactive-website/issues/14">Link naar mijn schetsen,
+                wireflow en breakdownschets</a>
+
+            <!-- Feedback -->
+            <div>
+                <p>Feedback:</p>
+                <ul>
+                    <li>Zodra je op een pijltje hebt geklikt wordt de volgende slide in beeld gebracht.</li>
+                    <li>Zodra je het begin of einde hebt bereikt wordt het pijltje grijs zodat je weet dat je niet nog
+                        verder door kan klikken.</li>
+                    <li>Door gebruik te makenvgfan</li>
+                    <li>De indicator van de slide wordt groot en donkerder van kleur zodra je op de desbtreffende slide
+                        terecht komt.</li>
+                </ul>
+            </div>
+
+            <!-- feedforward -->
+            <div class="feedback-feedforward">
+                <div>
+                    <p>Feedforward:</p>
+                    <ul>
+                        <li>Pijltjes worden bij hover ingezoomd.</li>
+                        <li> Door de indicatoren (Stipjes) kan je zien dat er nog meerdere slides zijn waar je doorheen
+                            kan klikken</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div class="divider"></div>
+        </div>
+
+
+ <section class="sectie-reviews" id="reviews">
+
+     <p>Reviews</p>
+     <h2>Bekijk hier de reviews van de Geveltuin projecten</h2>
+
+     <!-- Carousel -->
+     <div class="carousel-wrapper">
+         <div class="carousel">
+
+             <!-- Kaartjes -->
+             <ul class="slides">
+
+                 <!-- Kaartje 1 -->
+                 <li class="slide">
+
+                     <div class="wrapper-kaart color2">
+
+                         <img class="kaartje-afbeelding" src="./assets/review-student.jpg" alt="">
+
+                         <div class="content-kaartje">
+
+                             <img class="icon" src="assets/quote-icon-bieb-in-bloei.svg" alt="">
+
+                             <h3>De kracht van samenwerkingen en nog meer andere partners. </h3>
+                             <p>Ons derde Bieb in Bloei project is de Zadenbieb. Deze zal eind 2024 gemaakt
+                                 worden door
+                                 kinderen
+                                 uit de buurt bij de Maakplaats in OBA Javaplein. Tijdens het Zaaifeest in maart
+                                 2025 zal er
+                                 een
+                                 feestelijk .</p>
+
+                             <div class="gegevens">
+                                 <p class="naam">Amber Schalker</p>
+                                 <p class="tekst1 functie">Student Frondend Design</p>
+                             </div>
+
+                         </div>
+
+                     </div>
+
+                 </li>
+
+                 <!-- Kaartje 2 -->
+                 <li class="slide">
+
+                     <div class="wrapper-kaart color2">
+
+                         <img class="kaartje-afbeelding" src="./assets/review-student.jpg" alt="">
+
+                         <div class="content-kaartje">
+
+                             <img class="icon" src="assets/quote-icon-bieb-in-bloei.svg" alt="">
+
+                             <h3>De kracht van samenwerkingen en nog meer andere partners. </h3>
+                             <p>Ons derde Bieb in Bloei project is de Zadenbieb. Deze zal eind 2024 gemaakt
+                                 worden door
+                                 kinderen
+                                 uit de buurt bij de Maakplaats in OBA Javaplein. Tijdens het Zaaifeest in maart
+                                 2025 zal er
+                                 een
+                                 feestelijk .</p>
+
+                             <div class="gegevens">
+                                 <p class="naam">Amber Schalker</p>
+                                 <p class="tekst1 functie">Student Frondend Design</p>
+                             </div>
+
+                         </div>
+
+                     </div>
+
+                 </li>
+
+                 <!-- Kaartje 3 -->
+                 <li class="slide">
+
+                     <div class="wrapper-kaart color2">
+
+                         <img class="kaartje-afbeelding" src="./assets/review-student.jpg" alt="">
+
+                         <div class="content-kaartje">
+
+                             <img class="icon" src="assets/quote-icon-bieb-in-bloei.svg" alt="">
+
+                             <h3>De kracht van samenwerkingen en nog meer andere partners. </h3>
+                             <p>Ons derde Bieb in Bloei project is de Zadenbieb. Deze zal eind 2024 gemaakt
+                                 worden door
+                                 kinderen
+                                 uit de buurt bij de Maakplaats in OBA Javaplein. Tijdens het Zaaifeest in maart
+                                 2025 zal er
+                                 een
+                                 feestelijk .</p>
+
+                             <div class="gegevens">
+                                 <p class="naam">Amber Schalker</p>
+                                 <p class="tekst1 functie">Student Frondend Design</p>
+                             </div>
+
+                         </div>
+
+                     </div>
+
+                 </li>
+
+             </ul>
+         </div>
+
+         <!-- Indicatoren (stipjes) -->
+         <div class="dots">
+             <span class="dot active"></span>
+             <span class="dot"></span>
+             <span class="dot"></span>
+         </div>
+
+         <!-- Knoppen pijlen links/rechts -->
+         <div class="carousel-buttons">
+             <button class="prev">
+                 <img class="chevron" src="./assets/chevron-left.svg" alt="">
+             </button>
+             <button class="next">
+                 <img class="chevron" src="./assets/chevron-richt.svg" alt="">
+             </button>
+         </div>
+
+     </div>
+
+ </section>
+
+
+</body>
+</html>

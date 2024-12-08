@@ -2029,10 +2029,11 @@ button.next {
     background: #bbb;
     border-radius: 50%;
     cursor: pointer;
+    background: #344e3565;
 }
 
 .dot.active {
-    background: #333;
+    background: #344E35;
     transform: scale(1.5);
     margin: 0 2px 0 2px;
 }
