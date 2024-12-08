@@ -1842,7 +1842,7 @@ img.kaartje-img {
     z-index: 2;
 
      @media screen and (min-width: 740px) {
-         width: 70%;
+         width: 65%;
      }
 }
 
@@ -1980,11 +1980,26 @@ img.kaartje-afbeelding {
     transition: 0.2s ease-in-out;
     width: 4em;
     height: 4em;
+    display: flex;
+    flex-direction: column;
 }
 
 .carousel-buttons button p {
     font-size: 16px;
+    margin-top: .5em;
 }
+
+p.vorige {
+    align-self:flex-end;
+    text-align: right;
+}
+
+p.volgende {
+    align-self: baseline;
+    text-align: left;
+}
+
+
 
 .carousel-buttons button:hover {
     transform: scale(1.2);
