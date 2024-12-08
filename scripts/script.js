@@ -12,14 +12,17 @@ function toggleMenu() { // Voegt of verwijdert de class 'open' van het menu-elem
 
 
 // Carousel reviewkaartjes
-
 const slides = document.querySelectorAll('.slide'); // link de aangemaakte variabele slides aan de class .slide
 const dots = document.querySelectorAll('.dot');  // link de aangemaakte variabele dots aan de class dot
 let currentSlide = 0; // De variabele currentSlide geeft aan dat de slide die op actief staat op 0 (1) begint.
 
+const slidesContainer = document.querySelector('.slides');
+
 // Sliden van de carousels
 function updateCarousel() {
-  document.querySelector('.slides').style.transform = `translateX(-${currentSlide * 100}%)`; // Als bijvoorbeeld de currentSlide 1 is, wordt de container 100% naar links verschoven zodat de tweede slide zichtbaar wordt.
+  slidesContainer.classList.remove('slide-0', 'slide-1', 'slide-2'); // Voeg hier meer klassen toe als je meer slides hebt
+
+  slidesContainer.classList.add(`slide-${currentSlide}`);  // Voeg de klasse toe die overeenkomt met de huidige slide
 
   // Indicatoren
   dots.forEach((dot, index) => { // link elk puntje in de lijst aan de index

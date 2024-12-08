@@ -1896,6 +1896,26 @@ img.kaartje-img {
         flex-direction: row-reverse;
     }
 }
+
+/* Animatie sliden */
+.slide.bewegen {
+    translate: -100% 0%;
+}
+
+
+.slides.slide-0 {
+    transform: translateX(0%);
+}
+
+.slides.slide-1 {
+    transform: translateX(-100%);
+}
+
+.slides.slide-2 {
+    transform: translateX(-200%);
+}
+
+
 .wrapper-kaart {
     border-radius: 1em;
     width: 95%;
