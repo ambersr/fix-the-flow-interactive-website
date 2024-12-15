@@ -870,6 +870,12 @@ details>summary::-webkit-details-marker
     margin: 1.5em 0em 1.5em 0em;
 }
 
+.aanmelden-rechts .divider-2 {
+     margin: 1.5em 1em 1.5em 1em;
+     height: 1px;
+     background-color: #f8e7c1;
+}
+
 /* Aanmeldformulier */
 form {
     padding: 0;
