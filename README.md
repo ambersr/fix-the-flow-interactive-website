@@ -26,12 +26,22 @@ Daarnaast heb ik een nieuw ontwerp gemaakt voor de Partnerpagina. Deze pagina sl
 ### Het ontwikkelde platform
 In de afgelopen sprints heb ik 3 pagina's ontwikkeld:
 - Geveltuin pagina
+
+De Geveltuin pagina heeft een aantal kleine aanpassingen in de formulier velden en een aantal tekstuele aanpassingen zijn doorgevoerd
+
+Linkje naar de Geveltuin pagina: https://ambersr.github.io/fix-the-flow-interactive-website/index.html
+
 - Contact pagina
+
+Ook de contact pagina heeft een aantal kleine aanpassingen in de formulier velden en een aantal tekstuele aanpassingen zijn doorgevoerd
+
+Linkje naar de contact pagina: https://ambersr.github.io/fix-the-flow-interactive-website/partner.html
+
 - Partner pagina
 
-De patner pagina is een nieuw ontwikkelde pagina. Deze pagina bevat een interactie met Javscript namelijk de carousel met reviews. De carousel is mobile first ontiwkkeld en is voor verschillende schermbreedtes toegankelijk. Daarnaast is de carousel via de tab te navigeren, dit is handig voor gebruikers met screenreaders en heeft de carousel labels zodat het voor elke gebruiker duidelijk is hoe de interactie werkt.
+De Partnerpagina is een nieuw ontwikkelde toevoeging en bevat een interactieve JavaScript-functionaliteit: een carousel met reviews. Deze carousel is mobile-first ontworpen en toegankelijk gemaakt voor verschillende schermformaten. Daarnaast is de carousel eenvoudig te navigeren met de tabtoets, wat het gebruiksvriendelijk maakt voor mensen met screenreaders. Bovendien zijn er labels toegevoegd aan de carousel, zodat alle gebruikers duidelijk begrijpen hoe de interactie werkt.
 
-Linkje naar de Partner pagina: 
+Linkje naar de Partner pagina: https://ambersr.github.io/fix-the-flow-interactive-website/partner.html
 
 ### Belangrijke features:
 - Interactief element (carousel)
