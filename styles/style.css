@@ -1250,7 +1250,7 @@ form {
 }
 
 .contact-formulier-links input {
-    background-color: #fbf3df;
+    background-color: #fffcf3;
     border: 1px solid rgb(224, 224, 224);
 }
 
@@ -1314,8 +1314,9 @@ form {
     display: flex;
 }
 
-
-
+#chat {
+    width: 100%;
+}
 
 
 
