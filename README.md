@@ -1,4 +1,4 @@
-# Platform Bieb in Bloei sprint 4
+# Platform Bieb in Bloei sprint 5
 Tijdens sprint 5 heb ik me verdiept in interacties met JavaScript. Als onderdeel hiervan heb ik een extra pagina toegevoegd: de Partnerpagina. Voor deze pagina heb ik een interactieve carousel ontworpen, waarmee gebruikers de recensies en ervaringen van partners van Bieb in Bloei kunnen bekijken.
 
 Linkje naar de pagina: https://ambersr.github.io/fix-the-flow-interactive-website/partner.html
