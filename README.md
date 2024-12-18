@@ -48,7 +48,7 @@ Linkje naar de Partner pagina: https://ambersr.github.io/fix-the-flow-interactiv
 
 De partner pagina bevat een carousel. Op deze carousel kunnen gebruikers de meningen van partners van Bieb in Bloei bekijken. De carousel is volledig toegankelijk en bruikbaar voor diverse devices.
 
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/206d6a0d-16c1-4903-83dc-bbc573ea662c" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/87ea690e-854c-403e-b0e5-b592661e7675">
 
 - Formulieren aangepast
 
