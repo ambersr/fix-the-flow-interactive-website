@@ -9,7 +9,7 @@ function toggleMenu() { // Voegt of verwijdert de class 'open' van het menu-elem
     hetMenu.classList.toggle("open"); // Dit zorgt ervoor dat het menu zichtbaar wordt of verbergt bij elke klik
 }
 
-
+// ---------------------------------------------------------------------------------------------------------------
 
 // Carousel reviewkaartjes
 const slides = document.querySelectorAll('.slide'); // link de aangemaakte variabele slides aan de class .slide
@@ -63,3 +63,13 @@ updateCarousel(); // roept de functie updateCarousel() aan zodra de pagina gelad
 document.addEventListener("DOMContentLoaded", function() {
   // Je JavaScript-code hier
 });
+
+
+
+
+
+
+
+
+
+
