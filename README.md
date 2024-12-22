@@ -54,7 +54,7 @@ De partner pagina bevat een carousel. Op deze carousel kunnen gebruikers de meni
 
 De teksten in de velden van de formulieren zijn aangepast naar toegankelijke labels.
 
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/184fc37d-1958-4a21-b48d-c7fc3a5864ee">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/c42df2a1-a43a-4e0f-82fc-a49ef14da7c9" />
 
 ## Kenmerken
 ### Toegankelijkheid HTML
@@ -68,7 +68,7 @@ De Javascript wordt gebruikt om de animatie van het openklappen en dichtklappen 
 
 ## Bronnen
 - Huisstijl (kleuren en fonts uit de website gehaald) Linkje: https://bieb-in-bloei.vercel.app/
-- Figma bestand (design Geveltuin pagina) Linkje: https://www.figma.com/design/DXJVOUapnTVZWHXkFpcr0I/FDND-projecten?node-id=62-2304&t=5PNDDUMVCjG4DIYr-1
+- Figma bestand (High-fi ontwerp alle pagina's) Linkje: https://www.figma.com/design/DXJVOUapnTVZWHXkFpcr0I/FDND-projecten?node-id=62-2304&t=5PNDDUMVCjG4DIYr-1
 
 
 ## Licentie
