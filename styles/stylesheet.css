@@ -51,28 +51,28 @@ body {
 /* @font-face (typografie) */
 @font-face {
   font-family: 'Poppins-Black';
-  src: url(/fonts/Poppins-Black.ttf) format('truetype');
+  src: url(./fonts/Poppins-Black.ttf) format('truetype');
   font-style: normal;
   font-weight: 900;
 }
 
 @font-face {
   font-family: 'Poppins-Bold';
-  src: url(/fonts/Poppins-Bold.ttf) format('truetype');
+  src: url(./fonts/Poppins-Bold.ttf) format('truetype');
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Poppins-Medium';
-  src: url(/fonts/Poppins/Poppins-Medium.ttf) format('truetype');
+  src: url(./fonts/Poppins/Poppins-Medium.ttf) format('truetype');
   font-style: normal;
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Poppins-Regular';
-  src: url(/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+  src: url(./fonts/Poppins/Poppins-Regular.ttf) format('truetype');
   font-style: normal;
   font-weight: 400;
 
