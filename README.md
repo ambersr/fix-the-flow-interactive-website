@@ -46,7 +46,18 @@ Linkje naar de Partner pagina: https://ambersr.github.io/fix-the-flow-interactiv
 ### Belangrijke features:
 - Interactief element (carousel)
 
-De partner pagina bevat een carousel. Op deze carousel kunnen gebruikers de meningen van partners van Bieb in Bloei bekijken. De carousel is volledig toegankelijk en bruikbaar voor diverse devices.
+De partner pagina bevat een carousel. Op deze carousel kunnen gebruikers de meningen van partners van Bieb in Bloei bekijken. De carousel is volledig toegankelijk en bruikbaar voor diverse devices. Daarnaast is er ook feedback en feedforward verwerkt zodat de interactie gebruiksvriendelijker is voor de gebruiker.
+
+Feedback:
+
+- Zodra je op een pijltje hebt geklikt wordt de volgende slide in beeld gebracht.
+- Zodra je het begin of einde hebt bereikt wordt het pijltje grijs zodat je weet dat je niet nog verder door kan klikken.
+- De indicator van de slide wordt groot en donkerder van kleur zodra je op de  desbtreffende slide terecht komt.
+
+Feedforward:
+
+- Pijltjes worden bij hover ingezoomd. 
+- Door de indicatoren (Stipjes) kan je zien dat er nog meerdere slides zijn waar je doorheen kan klikken
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/87ea690e-854c-403e-b0e5-b592661e7675">
 
